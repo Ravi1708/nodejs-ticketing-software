@@ -35,6 +35,7 @@ const createTableQuery = `
     )
 `;
 
+// Execute the query to create the table
 db.query(createTableQuery, (err) => {
 	if (err) {
 		console.error("Error creating table:", err);
