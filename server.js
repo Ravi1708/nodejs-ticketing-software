@@ -7,6 +7,8 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
+// This is a comment added by me in dev branch
+
 // MySQL database connection configuration
 const db = mysql.createConnection({
 	host: "localhost",
