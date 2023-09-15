@@ -5,7 +5,7 @@ const rl = readline.createInterface({
 	output: process.stdout,
 });
 
-const conferenceName = "Go Conference";
+const conferenceName = "Marvel";
 let conferenceTickets = 50;
 let remainingTickets = 50;
 
