@@ -50,7 +50,7 @@ db.query(createTableQuery, (err) => {
 let remainingTickets = 100;
 
 app.get("/", (req, res) => {
-	const movieName = "Avengers End Game";
+	const movieName = "Spiderman - Home Coming";
 	res.json({
 		message: `Welcome to ${movieName} booking application`,
 		available_tickets: remainingTickets,
