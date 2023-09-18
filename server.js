@@ -50,8 +50,12 @@ db.query(createTableQuery, (err) => {
 let remainingTickets = 100;
 
 app.get("/", (req, res) => {
+	// serve assessts/index.html file
 	res.sendFile(__dirname + "/assets/index.html");
 });
+
+// serve css and js files in assests
+app.use("/assets", express.static(__dirname + "/assets"));
 
 // Function to get available tickets from the database
 function getAvailableTickets(callback) {
