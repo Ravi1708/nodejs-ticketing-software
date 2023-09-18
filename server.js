@@ -50,11 +50,7 @@ db.query(createTableQuery, (err) => {
 let remainingTickets = 100;
 
 app.get("/", (req, res) => {
-	const movieName = "Spider Man - No way Home";
-	res.json({
-		message: `Welcome to ${movieName} booking application`,
-		available_tickets: remainingTickets,
-	});
+	res.sendFile(__dirname + "/assets/index.html");
 });
 
 // Function to get available tickets from the database
