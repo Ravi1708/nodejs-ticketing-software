@@ -13,6 +13,11 @@ jobs:
             - name: Checkout Repository
               uses: actions/checkout@v2
 
+            - name: Install Node.js and NPM
+              uses: actions/setup-node@v2
+              with:
+                  node-version: 16
+
             - name: Deploy to Server
               uses: appleboy/ssh-action@master
               with:
@@ -24,4 +29,4 @@ jobs:
                       cd /opt/nodejs-ticketing-software
                       git pull origin master
                       npm install
-                      pm2 restart server # Replace with your PM2 app name
+                      pm2 restart server
