@@ -18,6 +18,11 @@ jobs:
               with:
                   node-version: 16
 
+            - name: Install Dependencies
+              run: |
+                  npm install -g pm2 # Install PM2 globally
+                  npm install
+
             - name: Deploy to Server
               uses: appleboy/ssh-action@master
               with:
