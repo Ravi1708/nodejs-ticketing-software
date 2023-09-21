@@ -18,10 +18,9 @@ jobs:
               with:
                   node-version: 16
 
-            - name: Install Dependencies
-              run: |
-                  npm install -g pm2 # Install PM2 globally
-                  npm install
+            - name: Add Node.js Binary to PATH
+              run: echo 'export PATH="/root/.nvm/versions/node/v16.20.2/bin:$PATH"' >> $GITHUB_ENV
+
             - name: Debug PATH Variable
               run: echo $PATH
 
