@@ -22,6 +22,8 @@ jobs:
               run: |
                   npm install -g pm2 # Install PM2 globally
                   npm install
+            - name: Debug PATH Variable
+              run: echo $PATH
 
             - name: Deploy to Server
               uses: appleboy/ssh-action@master
@@ -33,5 +35,7 @@ jobs:
                   script: |
                       cd /opt/nodejs-ticketing-software
                       git pull origin master
+                      echo $PATH
+                      whoami
                       npm install
                       pm2 restart server
