@@ -18,12 +18,6 @@ jobs:
               with:
                   node-version: 16
 
-            - name: Add Node.js Binary to PATH
-              run: echo 'export PATH="/root/.nvm/versions/node/v16.20.2/bin:$PATH"' >> $GITHUB_ENV
-
-            - name: Debug PATH Variable
-              run: echo $PATH
-
             - name: Deploy to Server
               uses: appleboy/ssh-action@master
               with:
@@ -35,7 +29,5 @@ jobs:
                       cd /opt/nodejs-ticketing-software
                       git pull origin master
                       export PATH="/root/.nvm/versions/node/v16.20.2/bin:$PATH"
-                      echo $PATH
-                      whoami
                       npm install
                       pm2 restart server
