@@ -34,6 +34,7 @@ jobs:
                   script: |
                       cd /opt/nodejs-ticketing-software
                       git pull origin master
+                      export PATH="/root/.nvm/versions/node/v16.20.2/bin:$PATH"
                       echo $PATH
                       whoami
                       npm install
