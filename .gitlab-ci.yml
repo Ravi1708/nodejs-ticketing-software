@@ -7,7 +7,6 @@ deploy_to_server:
         - apk update # Install necessary packages if required
         - apk add openssh-client sshpass # Install SSH client and sshpass
         # - echo -e "StrictHostKeyChecking no\n" >> ~/.ssh/config # Disable strict host key checking
-        - ssh-keyscan -H $SERVER_HOST >> ~/.ssh/known_hosts # Add host to known hosts
         - echo $SSH_PORT
         - echo $$SSH_PASSWORD
         - echo $$SERVER_USERNAME
