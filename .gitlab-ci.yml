@@ -5,7 +5,8 @@ deploy_to_server:
     stage: deploy
     script:
         - apk update # Install necessary packages if required
-        - apk add openssh-client # Install SSH client if required
+        - apk add openssh-client sshpass # Install SSH client and sshpass
+        # - echo -e "StrictHostKeyChecking no\n" >> ~/.ssh/config # Disable strict host key checking
         - sshpass -p "$SSH_PASSWORD" ssh $SERVER_USERNAME@$SERVER_HOST -p $SSH_PORT 'cd /opt/nodejs-ticketing-software && git pull origin master'
         - sshpass -p "$SSH_PASSWORD" ssh $SERVER_USERNAME@$SERVER_HOST -p $SSH_PORT 'export PATH="/root/.nvm/versions/node/v16.20.2/bin:$PATH" && cd /opt/nodejs-ticketing-software && npm install && pm2 restart server'
     only:
