@@ -12,6 +12,7 @@ pipeline {
                     sh "sshpass -p \"gcpubuntu@2022\" ssh -p 22 root@34.125.207.57 'cd /opt/nodejs-ticketing-software && npm install && pm2 restart server'"
                 }
             }
+            
         }
     }
 
